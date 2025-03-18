@@ -1,4 +1,5 @@
-![image](https://github.com/user-attachments/assets/9463c00f-49cf-4ad4-bb5c-43d570aae8a5)![image](https://github.com/user-attachments/assets/044113cb-57b6-4817-9822-c6577567dc9f)![image](https://github.com/user-attachments/assets/e16d755f-985a-42e0-9fae-c9e7d00c7ae2)# AWS-EC2
+# AWS-EC2
+
 The project contains EC2, its types, Regions and Availability Zones in AWS with detailed practical on EC2 instance creation
 
 - Most widely used and most popular AWS Service
