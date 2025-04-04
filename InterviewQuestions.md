@@ -77,4 +77,17 @@ How can you access a Linux EC2 instance if you’ve lost the key pair?
 
 Explain EBS volume types: gp2, gp3, io1, st1, sc1, etc.
 -
-- 
+- gp2 :- Genereal purpose SSD. Used for general workloads like databases, dev/test env.Size upto 1TB to 16TB
+- gp3 :- General purpose SSD- Next generation. Better performance and lower cost than gp2. Ideal for workloads with moderate to high performance requirements.. Cheaper than gp2. Size upto 1TB to 16TB
+- standard :- Legacy HDD storage for apps requiring lower cost and less demanding performance. Size upto 1 TB
+
+---------------------------------------------------------------------------------------------
+
+How do you configure Auto Scaling for EC2 instances?
+-
+- Configuring Auto scaling for EC2 ensures your app auto adjusts no of running instances based on demand,
+
+- Go to EC2 dashboard - Launch template with AMI ID, Instance type, key pair, SG
+- Ctreate auto scaling group - Configure subnets
+- Set scaling policies- Define capacity, min and max instances. Add policies like target tracking, step scaling
+- Add cloudwatch alarms for metrics like CPU Utilization, network In/Out, Request count
