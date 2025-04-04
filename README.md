@@ -107,6 +107,7 @@ Practical Demo
 - Another way to connect we can do using EC2 UI only
 
 <img width="959" alt="image" src="https://github.com/user-attachments/assets/15a5e122-c637-43d0-bb4a-b16018d04e5e" />
+
 ![image](https://github.com/user-attachments/assets/f845232f-c2a1-4711-9207-f8c59cec0516)
 
 - Another way using putty is open the terminal. To connect use below command
