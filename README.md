@@ -23,7 +23,7 @@ Why EC2 is used?
 - As a devops engineer we start creating instances, install hypervisor after buying physical servers. On top of physical servers we'll install hypervisor and start creating VMs and provide them to team for use.
 - If there're 100 requests and we've to create 1000 VMs using Shell scripts. Here creation is easy but then we've to timely upgrade, verify vulnerabilities, server issue. To manage 1000's of such servers is huge headache for devops engineer/sys admin. So major advantage moving to public cloud platform is to get rid of this maintenance.
 - So we need to move to public cloud platform to get rid of maintenance, cost and management of resources
-- Here we dont need dedicated people for timely upgrade, verify vulnerabilities, server issue, etc. AWS takes careof these. Here management effort has gone down and cost as well.
+- Here we dont need dedicated people for timely upgrade, verify vulnerabilities, server issue, etc. AWS takes care of these. Here management effort has gone down and cost as well.
 
 - As AWS has very huge network of resources, they get them at very low cost and we use these resources from AWS in "Pay as you Go" manner. So if we dont want these servers to be up during the night, or any time, we can shut them down and AWS wont charge.
 - Thats why people are moving towards EC2 instances
