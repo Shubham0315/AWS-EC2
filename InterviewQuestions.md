@@ -88,6 +88,10 @@ How do you configure Auto Scaling for EC2 instances?
 - Configuring Auto scaling for EC2 ensures your app auto adjusts no of running instances based on demand,
 
 - Go to EC2 dashboard - Launch template with AMI ID, Instance type, key pair, SG
-- Ctreate auto scaling group - Configure subnets
+- Create auto scaling group - Configure subnets
 - Set scaling policies- Define capacity, min and max instances. Add policies like target tracking, step scaling
 - Add cloudwatch alarms for metrics like CPU Utilization, network In/Out, Request count
+
+
+<img width="1890" height="676" alt="image" src="https://github.com/user-attachments/assets/f10b6d2e-bf86-4bd7-8dff-e5ded7ebf86f" />
+
