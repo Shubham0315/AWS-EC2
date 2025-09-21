@@ -95,3 +95,88 @@ How do you configure Auto Scaling for EC2 instances?
 
 <img width="1890" height="676" alt="image" src="https://github.com/user-attachments/assets/f10b6d2e-bf86-4bd7-8dff-e5ded7ebf86f" />
 
+---------------------------------------------------------------------------------------------
+
+What is the difference between stopping and terminating an EC2 instance?
+-
+- STOP - Instance shuts down. EBS volume remains intact. We can start it again
+- TERMINATE :- Permenant deletion. EBS volume also deleted. Need to re launch instance
+
+---------------------------------------------------------------------------------------------
+
+How do you attach and detach Elastic IPs? What happens if you restart the instance?
+-
+- Allocate new elastic IP from console. Associate with EC2 so it becomes public IP of instance unless we detach it
+- If we restart the EC2, only public IP changes, EIP remains same even after restart
+- EIP is static public IP basically
+
+---------------------------------------------------------------------------------------------
+
+How can you resize or change the instance type of an EC2 without downtime?
+-
+- Put EC2 behind ALB/NLB to ensure traffic is distributed and we can add/remove instances without affecting users
+- Launch new EC2 template
+- Use auto scaling groups
+- Wait for health checks as ELB ensure new instances are healthy before accepting traffic
+- ASG/ELB auto routes traffic to new instances. Once stable, reduce desired capacity to remove old instace type
+
+---------------------------------------------------------------------------------------------
+
+Explain the difference between EBS, Instance Store, and EFS with EC2
+-
+- EBS :- Network attached block storage. Persistent. To store data like OS files, app data
+- EFS :- Network file system. Shared across multiple EC2 instances. Scales automatically and good for microservices
+
+---------------------------------------------------------------------------------------------
+
+How do you increase the size of an EBS volume attached to an EC2 instance? Steps involved?
+-
+- Identify volume IDof EBS attached to EC2
+- Select volume - Modify in UI - Increase size, change volume type if needed - Modify
+- Chack status as volume goes to modifying state, wait until its available
+- Extend file system on EC2
+
+---------------------------------------------------------------------------------------------
+
+Difference between Elastic Load Balancer (ELB) and Auto Scaling? How do they work together with EC2?
+-
+- ELB distributes traffic across multiple instances. Used for traffic management HTTP/S/TCP. Ensures HA
+- ASG auto adjusts no of EC2 instances based on demand. Used for scaling instances for performance and cost efficiency. Used to launch or terminate EC2 auto
+
+- ELB receives traffic and distributes to healthy instances. ASG monitors metrics and adds/removes EC2 as needed
+- ELB auto includes new EC2 in target group and stops sending traffic to terminated or unhealthy instances
+
+---------------------------------------------------------------------------------------------
+
+You deployed an application on an EC2 instance but it’s not reachable from the internet. How would you troubleshoot?
+-
+- Check security groups, inbound rules allowing traffic
+- Check NACLs
+- Check public/Elastic IP, for private only IPs, instance sont be accessible from internet
+- Check instance state running, verify app is listening on correct port
+- Check LB if used
+- Check connectivity and logs
+
+---------------------------------------------------------------------------------------------
+
+Your EC2 instance is taking too long to boot. What steps would you take to debug?
+-
+- Check system logs, look for errors during boot like mounting volumes, services failing
+- Ensure root volume is not corrupted
+- Check instance type has enough resources
+- Check for misconfigured AMI
+
+---------------------------------------------------------------------------------------------
+
+Your application needs to persist logs even if the EC2 instance is terminated. How would you design this?
+-
+- Use EBS volumes with "Delete on Termination = false"
+- Use S3 for centralized logging
+- Stream cloudwatch logs  for real time monitoring
+
+---------------------------------------------------------------------------------------------
+
+A dev team requests access to EC2 instances without sharing PEM keys. How would you manage this securely?
+-
+- I would use IAM roles with AWS Systems Manager Session Manager to grant developers secure, auditable access to EC2 instances without sharing PEM keys
+- Optionally using Secrets Manager for any temporary credentials
